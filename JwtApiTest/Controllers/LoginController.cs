@@ -42,12 +42,5 @@ namespace JwtApiTest.Controllers
             var genericResult = await _authService.Authenticate(request);
             return genericResult;
         }
-
-        [HttpGet("{email}"), Route("profile")]
-        public async Task<ICommandResult> Get(string email)
-        {
-            var response = await _userService.GetUserByEmail(email);
-            return response;
-        }
     }
 }

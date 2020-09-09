@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
 
 namespace JwtApiTest.Domain.Models
@@ -16,7 +17,7 @@ namespace JwtApiTest.Domain.Models
         public IEnumerable<string> Roles => _roles;
         public IEnumerable<string> Permissions => _permissions;
 
-        [JsonIgnore]
+        [System.Runtime.Serialization.IgnoreDataMember]
         public Password Password { get; private set; }
 
         protected User() { }
